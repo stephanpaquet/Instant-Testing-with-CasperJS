@@ -1,6 +1,7 @@
 /*global casper */
 
 // casperjs test example2.js
+// When using the casperjs test command, we do not need to create the casper instance, but we need to call the begin method and end the test with the done method.
 
 casper.test.begin('Test my form', 3, function (test) {
     "use strict";
