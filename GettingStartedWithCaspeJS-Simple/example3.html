@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+        <style>
+            .searching { color: grey;}
+            .success { color: green;}
+            .noresults {color: red;}
+        </style>
+    </head>
+
+    <body>
+        <script>
+            function geonamesSearch() {
+                $('#results').html("Searching...");
+                $('#results').attr('class', 'searching');
+
+                var url = "http://api.geonames.org/searchJSON";
+                var query = $('#searchedlocation').val();
+                $.getJSON(url + "?username=demo&q=" + query + "&maxRows=25&featureClass=P", null, function(data) {
+                    var data = data.geonames;
+                    var names = [];
+                    if (data.length > 0) {
+                        $.each(data, function(i, val){
+                            names.push(val.name + " (" + val.adminName1 + ")");
+                        });
+                        $('#results').html(names.join("<br/>"));
+                        $('#results').attr('class', 'success');
+                    } else {
+                        $('#results').html("No matching place.");
+                        $('#results').attr('class', 'noresults');
+                    }
+                });
+            }
+        </script>
+
+        <input type="text" id="searchedlocation" />
+        <button id="search" onclick="geonamesSearch();">Click me</button>
+
+        <div id="results"></div>
+    </body>
+</html>
