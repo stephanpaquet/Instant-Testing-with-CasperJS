@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <style>
+            #box {
+                color: white;
+                background-color: blue;
+                width: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+        </head>
+    <body>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+        <script>
+        $(document).ready(function() {
+            $('#box').draggable();
+        });
+        </script>
+        <div id="box">My box</div>
+    </body>
+</html>
