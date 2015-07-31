@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <p>It presents a list of headers and when the mouse goes over any of them, a counter is incremented.</p>
+        
+        <h1 id="chap1">Chapter 1</h1>
+        <h1 id="chap2">Chapter 2</h1>
+        <h1 id="chap3">Chapter 3</h1>
+        <h1 id="chap4">Chapter 4</h1>
+        <div>
+            Counter: <span id="counter"></span>
+        </div>
+
+        <script>
+            var counter = 0;
+            function incrementCounter() {
+                counter = counter + 1;
+                document.querySelector('#counter').textContent = counter;
+            }
+
+            for(i = 0; i < document.querySelectorAll("h1").length; i += 1) {
+                document.querySelectorAll("h1")[i].onmouseover = incrementCounter;
+            }
+        </script>
+    </body>
+</html>

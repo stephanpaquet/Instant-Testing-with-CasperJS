@@ -1,8 +1,9 @@
 /*global casper, require */
+// casperjs --ssl-protocol=any example4-a.js
 
 var casper = require('casper').create();
 
-casper.start('http://localhost:8000/example4.html', function () {
+casper.start('http://localhost:8000/WritingAdvancedTests-Intermediate/example4.html', function () {
     "use strict";
 
     this.click("#link-to-text");
@@ -11,10 +12,11 @@ casper.start('http://localhost:8000/example4.html', function () {
 casper.then(function () {
     "use strict";
 
-    this.echo(this.getCurrentUrl()); // http://localhost:8000/files/text.txt
+    // http://localhost:8000/WritingAdvancedTests-Intermediate/files/text.txt
+    this.echo(this.getCurrentUrl());
 });
 
-casper.thenOpen('http://localhost:8000/example4.html', function () {
+casper.thenOpen('http://localhost:8000/WritingAdvancedTests-Intermediate/example4.html', function () {
     "use strict";
 
     this.click("#link-to-pdf");
@@ -23,8 +25,8 @@ casper.thenOpen('http://localhost:8000/example4.html', function () {
 casper.then(function () {
     "use strict";
 
-    this.echo(this.getCurrentUrl()); // http://localhost:8000/example4.html
-
+    // http://localhost:8000/WritingAdvancedTests-Intermediate/example4.html
+    this.echo(this.getCurrentUrl());
 });
 
 casper.run();
