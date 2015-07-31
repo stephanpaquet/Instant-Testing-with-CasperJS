@@ -10,9 +10,9 @@ npm install -g casperjs
 python -m SimpleHTTPServer
 ```
 
+### Memos
 ``` Javascript
 var utils = require('utils');
-
 utils.dump("Something to dump");
 ```
 
@@ -27,3 +27,7 @@ use fill() , for instance) to make sure the complete application is working fine
 | "div#form-container span input" | "form[name='registration'] input[name='firstname']" | We only depend on form elements and their names |
 | "div ul li:first-child a" | "#results .result:first-child a" | We use IDs and classes instead of tag names |
 | "a#reset-btn" | x("//a[normalize-space(text())='Reset']") | We use the link text instead of its ID (and to do this, we switch to the XPath selector) |
+
+## TODO
+- [ ] Faire un résumé des example dans le README
+
